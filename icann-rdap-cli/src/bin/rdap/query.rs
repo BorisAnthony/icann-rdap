@@ -272,7 +272,8 @@ fn output_immediately<W: std::io::Write>(
                 skin.bold.set_fg(DarkBlue);
                 skin.italic.set_fg(Red);
                 skin.quote_mark.set_fg(DarkBlue);
-                skin.table.set_fg(DarkGrey);
+                // skin.table.set_fg(DarkGrey);
+                skin.table.set_fg(Rgb { r: 64, g: 64, b: 64 });
                 skin.table.align = Alignment::Left;
                 skin.horizontal_rule.set_fg(DarkGreen);
                 skin.horizontal_rule.set_char('═');
