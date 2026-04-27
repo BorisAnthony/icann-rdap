@@ -261,9 +261,10 @@ fn output_immediately<W: std::io::Write>(
             OutputType::RenderedMarkdown => {
                 let mut skin = MadSkin::default_dark();
                 skin.set_headers_fg(Yellow);
-                skin.headers[1].align = Alignment::Center;
-                skin.headers[2].align = Alignment::Center;
-                skin.headers[3].align = Alignment::Center;
+                skin.headers[0].align = Alignment::Left;
+                skin.headers[1].align = Alignment::Left;
+                skin.headers[2].align = Alignment::Left;
+                skin.headers[3].align = Alignment::Left;
                 skin.headers[4].compound_style.set_fg(DarkGreen);
                 skin.headers[5].compound_style.set_fg(Magenta);
                 skin.headers[6].compound_style.set_fg(Cyan);
@@ -272,8 +273,9 @@ fn output_immediately<W: std::io::Write>(
                 skin.italic.set_fg(Red);
                 skin.quote_mark.set_fg(DarkBlue);
                 skin.table.set_fg(DarkGrey);
-                skin.table.align = Alignment::Center;
+                skin.table.align = Alignment::Left;
                 skin.horizontal_rule.set_fg(DarkGreen);
+                skin.horizontal_rule.set_char('═');
                 skin.inline_code.set_fgbg(Cyan, Reset);
                 skin.write_text_on(
                     write,
